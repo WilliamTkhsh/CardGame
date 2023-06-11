@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CardEditor : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class CardEditor : MonoBehaviour
     public int attackInput = 1;
     public int defenseInput = 1;
     public CardStats cardStats;
+    public GameObject deckObject;
     public DropdownController dropdownController;
 
     public void IncreaseAttack()
@@ -70,8 +71,33 @@ public class CardEditor : MonoBehaviour
         cardStats.defense = defense;
     }
 
-    public void SaveCard()
-    { 
-        //TODO: Salvar a carta no deck e ir para outra cena
+    public void SaveCardIntoDeck()
+    {
+        if (deckObject != null && cardStats != null)
+        {
+            CardStats newCard = Instantiate(cardStats);
+            newCard.transform.parent = deckObject.transform;
+        }
+        else
+        {
+            Debug.LogError("Deck Object or Card Prefab is not assigned!");
+        }
+    }
+
+    public void MoveToDeckScene()
+    {
+        Scene deckScene = SceneManager.GetSceneByName("DeckEditor");
+        SceneManager.LoadScene("DeckEditor");
+        
+        if (deckScene.IsValid())
+        {
+            SceneManager.MoveGameObjectToScene(deckObject, SceneManager.GetActiveScene());
+        }
+    }
+
+    public void OnClickSaveButton()
+    {
+        SaveCardIntoDeck();
+        //MoveToDeckScene();
     }
 }
