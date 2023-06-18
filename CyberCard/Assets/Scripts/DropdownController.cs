@@ -7,7 +7,7 @@ public class DropdownController : MonoBehaviour
     public TMP_Dropdown tipoDropdown;
     public TMP_Dropdown modeloDropdown;
     public TMP_Dropdown materialDropdown;
-    public CardStats cardStats;
+    public DisplayCardStats cardStats;
 
     public string[] armaModelos;
     public string[] veiculoModelos;

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 4b7789fd129a2a54c9e46cf35926b4a2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Nippo Variable
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 25a4c1e3170bdc3469dcaa41cd47846d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

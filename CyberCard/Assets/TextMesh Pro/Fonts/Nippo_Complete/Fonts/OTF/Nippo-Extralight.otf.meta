@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: cef80fb0b6c9f9f4b864b510fb2a0a00
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Nippo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 87d934f35155cea4f93fd3f7d83fad7f, type: 3}
+  - {fileID: 12800000, guid: 31cc14ad04c8a7148ab0639de066cea3, type: 3}
+  - {fileID: 12800000, guid: 4a573b5b3332b5e43a1912ecf064a146, type: 3}
+  - {fileID: 12800000, guid: 633e1c399d9b4ad48a3497cb8d55ff9a, type: 3}
+  - {fileID: 12800000, guid: 7a374e25cb9e0ec4887e18f0961de0bd, type: 3}
+  - {fileID: 12800000, guid: 1a93c59cddd5b5942bfeba6081143764, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
