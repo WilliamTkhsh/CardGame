@@ -14,8 +14,6 @@ public class DisplayCardStats : MonoBehaviour
     public TextMeshPro attackText;
     public TextMeshPro defenseText;
 
-
-
     public void Start()
     {
         attack = 1;

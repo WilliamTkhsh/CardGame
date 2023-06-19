@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -15,6 +16,8 @@ public class CardEditor : MonoBehaviour
     public DisplayCardStats cardStats;
     public DropdownController dropdownController;
     public Deck deck;
+    private GameObject canvas;
+    [SerializeField] private CameraController mainCamera;
 
     void Start()
     {
@@ -22,6 +25,7 @@ public class CardEditor : MonoBehaviour
         defenseInput = 1;
         menuAttackText.text = attackInput.ToString();
         menuDefenseText.text = defenseInput.ToString();
+        canvas = GameObject.FindWithTag("CanvasEditor");
     }
 
     public void IncreaseAttack()
@@ -66,18 +70,31 @@ public class CardEditor : MonoBehaviour
 
     public void SaveCardIntoDeck()
     {
-        if (deck != null && cardStats != null)
+        if (deck.cardList.Count() < 20)
         {
             deck.cardList.Add(new Card(cardStats.attack, cardStats.defense, cardStats.cardType, cardStats.cardModel, cardStats.cardMaterial));
         }
         else
         {
-            Debug.LogError("Deck Object or Card Prefab is not assigned!");
+            Debug.LogError("O Deck está cheio");
         }
     }
 
     public void OnClickSaveButton()
     {
         SaveCardIntoDeck();
+    }
+
+    public void OnClickPlayButton()
+    {
+        if (deck.cardList.Count() == 20)
+        {
+            canvas.SetActive(false);
+            mainCamera.MoveCamera();
+        }
+        else
+        {
+            Debug.LogError("O Deck precisa conter 20 cartas");
+        }
     }
 }
