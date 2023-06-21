@@ -87,10 +87,11 @@ public class CardEditor : MonoBehaviour
 
     public void OnClickPlayButton()
     {
+        canvas.SetActive(false);
+        mainCamera.MoveCamera();
         if (deck.cardList.Count() == 20)
         {
-            canvas.SetActive(false);
-            mainCamera.MoveCamera();
+
         }
         else
         {
