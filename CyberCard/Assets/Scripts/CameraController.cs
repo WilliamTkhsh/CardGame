@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 
     public bool isMoving = false;
 
-    void Update()
+    void FixedUpdate()
     {
         if (isMoving)
         {
