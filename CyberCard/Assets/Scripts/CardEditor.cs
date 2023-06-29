@@ -11,6 +11,7 @@ public class CardEditor : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI menuAttackText;
     [SerializeField] private TextMeshProUGUI menuDefenseText;
+    public GameManager gameManager;
     private int attackInput;
     private int defenseInput;
     public DisplayCardStats cardStats;
@@ -70,7 +71,7 @@ public class CardEditor : MonoBehaviour
 
     public void SaveCardIntoDeck()
     {
-        if (deck.cardList.Count() < 20)
+        if (deck.cardList.Count() < 10)
         {
             deck.cardList.Add(new Card(cardStats.attack, cardStats.defense, cardStats.cardType, cardStats.cardModel, cardStats.cardMaterial));
         }
@@ -89,13 +90,14 @@ public class CardEditor : MonoBehaviour
     {
         canvas.SetActive(false);
         mainCamera.MoveCamera();
-        if (deck.cardList.Count() == 20)
-        {
+        //if (deck.cardList.Count() == 20)
+        //{
 
-        }
-        else
-        {
-            Debug.LogError("O Deck precisa conter 20 cartas");
-        }
+        //}
+        //else
+        //{
+        //    Debug.LogError("O Deck precisa conter 20 cartas");
+        //}
+        gameManager.StartGame();
     }
 }

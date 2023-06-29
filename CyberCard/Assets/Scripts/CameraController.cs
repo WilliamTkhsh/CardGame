@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     public Quaternion targetRotation;
     public float moveSpeed;
 
-    private bool isMoving = false;
+    public bool isMoving = false;
 
     void Update()
     {
