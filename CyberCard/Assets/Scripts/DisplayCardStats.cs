@@ -14,6 +14,18 @@ public class DisplayCardStats : MonoBehaviour
     public TextMeshPro attackText;
     public TextMeshPro defenseText;
 
+    public DisplayCardStats(int attack, int defense, string cardType, string cardModel, string cardMaterial)
+    {
+        this.attack = attack;
+        this.defense = defense;
+        this.cardType = cardType;
+        this.cardModel = cardModel;
+        this.cardMaterial = cardMaterial;
+        this.attackText.text = attack.ToString();
+        this.defenseText.text = defense.ToString();
+    }
+
+
     public void Start()
     {
         attack = 1;
