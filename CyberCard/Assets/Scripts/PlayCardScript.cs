@@ -20,9 +20,14 @@ public class PlayCardScript : MonoBehaviour
                 if (hit.collider.gameObject == cardPlane)
                 {
                     Debug.Log("Carta Jogada");
-                    PlayCard();
+
                 }
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayCard();
         }
     }
 

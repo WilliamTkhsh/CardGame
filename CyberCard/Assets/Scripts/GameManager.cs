@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         Card card = deck.cardList[Random.Range(0, deck.cardList.Count)];
         cardTemplate.transform.localPosition = new Vector3(0, 0, 0);
+        cardTemplate.transform.localRotation = Quaternion.Euler(0, 0, 0);
         GameObject newCard = Instantiate(cardTemplate, transform);
         newCard.GetComponent<DisplayCardStats>().attackText.text = card.attack.ToString();
         newCard.GetComponent<DisplayCardStats>().defenseText.text = card.defense.ToString();
