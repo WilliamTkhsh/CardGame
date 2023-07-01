@@ -283,7 +283,7 @@ PrefabInstance:
     - target: {fileID: 882129737928793925, guid: e0eb1d3d818a2d6458632d142647f34b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0d17be6c617ac214e9e6fb631a834060, type: 2}
+      objectReference: {fileID: 2100000, guid: fa9c3804cb009bf4a8f89d0350bad47d, type: 2}
     - target: {fileID: 919132149155446097, guid: e0eb1d3d818a2d6458632d142647f34b, type: 3}
       propertyPath: m_Name
       value: carta_02
