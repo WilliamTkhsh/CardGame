@@ -19,6 +19,9 @@ public class DropdownController : MonoBehaviour
         tipoDropdown.ClearOptions();
         tipoDropdown.AddOptions(new List<string> { "Arma", "Veículo", "Personagem" });
 
+        materialDropdown.ClearOptions();
+        materialDropdown.AddOptions(new List<string> { "Bronze", "Silver", "Gold" });
+
         // Define as opções iniciais do dropdown "Modelo" para Arma
         SetModeloDropdownOptions(armaModelos);
     }
@@ -38,7 +41,7 @@ public class DropdownController : MonoBehaviour
                 break;
         }
         SetCardTipoValue(tipoDropdown.options[tipoDropdown.value].text);
-        Debug.Log(cardStats.cardType);
+        cardStats.UpdateCardTypeIcon();
     }
 
     public void OnModeloDropdownValueChanged()
@@ -49,7 +52,7 @@ public class DropdownController : MonoBehaviour
     public void OnMaterialDropdownValueChanged()
     {
         SetCardMaterialValue(materialDropdown.options[materialDropdown.value].text);
-        Debug.Log(cardStats.cardMaterial);
+        cardStats.UpdateCardMaterial();
     }
 
     private void SetModeloDropdownOptions(string[] options)

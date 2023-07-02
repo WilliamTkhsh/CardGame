@@ -13,6 +13,10 @@ public class DisplayCardStats : MonoBehaviour
     public string cardMaterial;
     public TextMeshPro attackText;
     public TextMeshPro defenseText;
+    public GameObject cardEdge;
+    public List<Material> materials;
+    public List<GameObject> typeIcon;
+
 
     public DisplayCardStats(int attack, int defense, string cardType, string cardModel, string cardMaterial)
     {
@@ -26,27 +30,70 @@ public class DisplayCardStats : MonoBehaviour
     }
 
 
-    public void Start()
+    public void Awake()
     {
         attack = 1;
         defense = 1;
         cardType = "Arma";
         cardModel = "Arma 1";
-        cardMaterial = "Material 1";
+        cardMaterial = "Bronze";
         attackText.text = attack.ToString();
         defenseText.text = defense.ToString();
     }
 
-    public void UpdateAttackText(int attackInput)
+    public void UpdateAttackText()
     {
-        attackText.text = attackInput.ToString();
-        attack = attackInput;
+        attackText.text = attack.ToString();
     }
 
-    public void UpdateDefenseText(int defenseInput)
+    public void UpdateDefenseText()
     {
-        defenseText.text = defenseInput.ToString();
-        defense = defenseInput;
+        defenseText.text = defense.ToString();
     }
 
+    public void UpdateCardMaterial()
+    {
+        switch (cardMaterial)
+        {
+            case "Bronze": // Bronze
+                cardEdge.GetComponent<MeshRenderer>().material = materials[0];
+                break;
+            case "Silver": // Silver
+                cardEdge.GetComponent<MeshRenderer>().material = materials[1];
+                break;
+            case "Gold": // Gold
+                cardEdge.GetComponent<MeshRenderer>().material = materials[2];
+                break;
+        }
+    }
+
+    public void UpdateCardTypeIcon()
+    {
+        switch (cardType)
+        {
+            case "Arma": // Arma
+                typeIcon[0].gameObject.SetActive(true);
+                typeIcon[1].gameObject.SetActive(false);
+                typeIcon[2].gameObject.SetActive(false);
+                break;
+            case "Veículo": // Veículo
+                typeIcon[0].gameObject.SetActive(false);
+                typeIcon[1].gameObject.SetActive(true);
+                typeIcon[2].gameObject.SetActive(false);
+                break;
+            case "Personagem": // Personagem
+                typeIcon[0].gameObject.SetActive(false);
+                typeIcon[1].gameObject.SetActive(false);
+                typeIcon[2].gameObject.SetActive(true);
+                break;
+        }
+    }
+
+    public void DisplayAll()
+    {
+        UpdateAttackText();
+        UpdateDefenseText();
+        UpdateCardTypeIcon();
+        UpdateCardMaterial();
+    }
 }

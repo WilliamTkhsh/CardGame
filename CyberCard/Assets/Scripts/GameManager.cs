@@ -38,8 +38,12 @@ public class GameManager : MonoBehaviour
         cardTemplate.transform.localPosition = new Vector3(0, 0, 0);
         cardTemplate.transform.localRotation = Quaternion.Euler(0, 0, 0);
         GameObject newCard = Instantiate(cardTemplate, transform);
-        newCard.GetComponent<DisplayCardStats>().attackText.text = card.attack.ToString();
-        newCard.GetComponent<DisplayCardStats>().defenseText.text = card.defense.ToString();
+        newCard.GetComponent<DisplayCardStats>().attack = card.attack;
+        newCard.GetComponent<DisplayCardStats>().defense = card.defense;
+        newCard.GetComponent<DisplayCardStats>().cardType = card.cardType;
+        newCard.GetComponent<DisplayCardStats>().cardModel = card.cardModel;
+        newCard.GetComponent<DisplayCardStats>().cardMaterial = card.cardMaterial;
+        newCard.GetComponent<DisplayCardStats>().DisplayAll();
         deck.cardList.Remove(card);
     }
 }

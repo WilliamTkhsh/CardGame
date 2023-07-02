@@ -11,6 +11,7 @@ public class CardEditor : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI menuAttackText;
     [SerializeField] private TextMeshProUGUI menuDefenseText;
+    [SerializeField] private TextMeshProUGUI menuDeckCount;
     public GameManager gameManager;
     private int attackInput;
     private int defenseInput;
@@ -26,6 +27,7 @@ public class CardEditor : MonoBehaviour
         defenseInput = 1;
         menuAttackText.text = attackInput.ToString();
         menuDefenseText.text = defenseInput.ToString();
+        menuDeckCount.text = 0.ToString();
         canvas = GameObject.FindWithTag("CanvasEditor");
     }
 
@@ -34,7 +36,8 @@ public class CardEditor : MonoBehaviour
         if (attackInput < 5)
         {
             attackInput++;
-            cardStats.UpdateAttackText(attackInput);
+            cardStats.attack = attackInput;
+            cardStats.UpdateAttackText();
             menuAttackText.text = attackInput.ToString();
         }
     }
@@ -44,7 +47,8 @@ public class CardEditor : MonoBehaviour
         if (attackInput > 1)
         {
             attackInput--;
-            cardStats.UpdateAttackText(attackInput);
+            cardStats.attack = attackInput;
+            cardStats.UpdateAttackText();
             menuAttackText.text = attackInput.ToString();
         }
     }
@@ -54,7 +58,8 @@ public class CardEditor : MonoBehaviour
         if(defenseInput < 5)
         {
             defenseInput++;
-            cardStats.UpdateDefenseText(defenseInput);
+            cardStats.defense = defenseInput;
+            cardStats.UpdateDefenseText();
             menuDefenseText.text = defenseInput.ToString();
         }
     }
@@ -64,7 +69,8 @@ public class CardEditor : MonoBehaviour
         if (defenseInput > 1)
         {
             defenseInput--;
-            cardStats.UpdateDefenseText(defenseInput);
+            cardStats.defense = defenseInput;
+            cardStats.UpdateDefenseText();
             menuDefenseText.text = defenseInput.ToString();
         }
     }
@@ -74,6 +80,7 @@ public class CardEditor : MonoBehaviour
         if (deck.cardList.Count() < 10)
         {
             deck.cardList.Add(new Card(cardStats.attack, cardStats.defense, cardStats.cardType, cardStats.cardModel, cardStats.cardMaterial));
+            menuDeckCount.text = deck.cardList.Count().ToString();
         }
         else
         {

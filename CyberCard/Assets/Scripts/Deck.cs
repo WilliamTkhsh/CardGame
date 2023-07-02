@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
-    [SerializeField] public List<Card> cardList = new List<Card>();
+    public List<Card> cardList = new List<Card>();
 
 }

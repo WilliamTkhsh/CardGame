@@ -44,7 +44,7 @@ public class PlayCardScript : MonoBehaviour
     {
 
         cardObject.transform.SetParent(transform);
-        cardObject.transform.localPosition = new Vector3(2f, 0f, -1f);
+        cardObject.transform.localPosition = new Vector3(2f, 0f, -6f);
         cardObject.transform.localRotation = Quaternion.Euler(0, -90, 0);
     }
 
