@@ -35,7 +35,7 @@ public class DisplayCardStats : MonoBehaviour
         attack = 1;
         defense = 1;
         cardType = "Arma";
-        cardModel = "Arma 1";
+        cardModel = "Arma1";
         cardMaterial = "Bronze";
         attackText.text = attack.ToString();
         defenseText.text = defense.ToString();
@@ -87,13 +87,5 @@ public class DisplayCardStats : MonoBehaviour
                 typeIcon[2].gameObject.SetActive(true);
                 break;
         }
-    }
-
-    public void DisplayAll()
-    {
-        UpdateAttackText();
-        UpdateDefenseText();
-        UpdateCardTypeIcon();
-        UpdateCardMaterial();
     }
 }

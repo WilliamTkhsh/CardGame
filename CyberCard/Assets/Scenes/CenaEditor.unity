@@ -3058,17 +3058,14 @@ MonoBehaviour:
   materialDropdown: {fileID: 1119222043}
   cardStats: {fileID: 7763282995748045820}
   armaModelos:
-  - Arma 1
-  - Arma 2
-  - Arma 3
+  - Arma1
+  - Arma2
   veiculoModelos:
-  - "Ve\xEDculo 1"
-  - "Ve\xEDculo 2"
-  - "Ve\xEDculo 3"
+  - "Ve\xEDculo1"
+  - "Ve\xEDculo2"
   personagemModelos:
-  - Personagem 1
-  - Personagem 2
-  - Personagem 3
+  - Robo1
+  - Robo2
 --- !u!1 &449670780
 GameObject:
   m_ObjectHideFlags: 0
@@ -17889,6 +17886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5959772990174923759}
   - component: {fileID: 5959772990174923758}
+  - component: {fileID: 5959772990174923760}
   m_Layer: 0
   m_Name: cartaTemplate
   m_TagString: CardTag
@@ -17946,6 +17944,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5959772990174923760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959772990174923756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55294dcdcf0eb84882eec62c2d90120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 0
+  defense: 0
+  cardType: 
+  cardModel: 
+  cardMaterial: 
+  attackText: {fileID: 5959772989655670560}
+  defenseText: {fileID: 5959772988961965242}
+  cardEdge: {fileID: 5959772990105141448}
+  materials:
+  - {fileID: 2100000, guid: 0d17be6c617ac214e9e6fb631a834060, type: 2}
+  - {fileID: 2100000, guid: 2040aa44314c1504a8def64286d48674, type: 2}
+  - {fileID: 2100000, guid: fa9c3804cb009bf4a8f89d0350bad47d, type: 2}
+  typeIcon:
+  - {fileID: 1115071262}
+  - {fileID: 1801753739}
+  - {fileID: 631830520}
+  assetModelPath: 
 --- !u!1 &5959772990798518770
 GameObject:
   m_ObjectHideFlags: 0
@@ -19397,7 +19424,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ffcaa6dc8e11bbc4d83428849c91fdac, type: 2}
+  - {fileID: 2100000, guid: de34385c295921349819ded156077424, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

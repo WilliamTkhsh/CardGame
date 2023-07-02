@@ -42,10 +42,15 @@ public class PlayCardScript : MonoBehaviour
 
     public void MoveCardToTableSlot(Transform transform)
     {
-
         cardObject.transform.SetParent(transform);
         cardObject.transform.localPosition = new Vector3(2f, 0f, -6f);
         cardObject.transform.localRotation = Quaternion.Euler(0, -90, 0);
+        var assetModel = cardObject.GetComponent<DisplayCardStatsTable>().cardModel;
+        Debug.Log("Prefabs/" + assetModel);
+        var hologramTransform = transform;
+        var yOffset = 2f; // Distância adicional no eixo Y
+        var positionOffset = new Vector3(0f, yOffset, 0f);
+        Instantiate(Resources.Load("Prefabs/" + assetModel), hologramTransform.position + positionOffset, hologramTransform.rotation);
     }
 
 }
