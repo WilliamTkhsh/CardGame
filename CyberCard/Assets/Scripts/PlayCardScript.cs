@@ -48,7 +48,7 @@ public class PlayCardScript : MonoBehaviour
         var assetModel = cardObject.GetComponent<DisplayCardStatsTable>().cardModel;
         Debug.Log("Prefabs/" + assetModel);
         var hologramTransform = transform;
-        var yOffset = 2f; // Distância adicional no eixo Y
+        var yOffset = 0.75f; // Distância adicional no eixo Y
         var positionOffset = new Vector3(0f, yOffset, 0f);
         Instantiate(Resources.Load("Prefabs/" + assetModel), hologramTransform.position + positionOffset, hologramTransform.rotation);
     }
