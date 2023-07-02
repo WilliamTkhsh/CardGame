@@ -28,16 +28,23 @@ public class DropdownController : MonoBehaviour
 
     public void OnTipoDropdownValueChanged()
     {
+        string[] options;
         switch (tipoDropdown.value)
         {
             case 0: // Arma
-                SetModeloDropdownOptions(armaModelos);
+                options = armaModelos;
+                SetModeloDropdownOptions(options);
+                SetCardModeloValue(options[0]);
                 break;
             case 1: // Veículo
-                SetModeloDropdownOptions(veiculoModelos);
+                options = veiculoModelos;
+                SetModeloDropdownOptions(options);
+                SetCardModeloValue(options[0]);
                 break;
             case 2: // Personagem
-                SetModeloDropdownOptions(personagemModelos);
+                options = personagemModelos;
+                SetModeloDropdownOptions(options);
+                SetCardModeloValue(options[0]);
                 break;
         }
         SetCardTipoValue(tipoDropdown.options[tipoDropdown.value].text);
@@ -47,7 +54,6 @@ public class DropdownController : MonoBehaviour
     public void OnModeloDropdownValueChanged()
     {
         SetCardModeloValue(modeloDropdown.options[modeloDropdown.value].text);
-        Debug.Log(cardStats.cardModel);
     }
     public void OnMaterialDropdownValueChanged()
     {
