@@ -46,11 +46,12 @@ public class PlayCardScript : MonoBehaviour
         cardObject.transform.localPosition = new Vector3(2f, 0f, -6f);
         cardObject.transform.localRotation = Quaternion.Euler(0, -90, 0);
         var assetModel = cardObject.GetComponent<DisplayCardStatsTable>().cardModel;
+        var assetTexture = cardObject.GetComponent<DisplayCardStatsTable>().cardMaterial;
         Debug.Log("Prefabs/" + assetModel);
         var hologramTransform = transform;
         var yOffset = 0.75f; // Distância adicional no eixo Y
         var positionOffset = new Vector3(0f, yOffset, 0f);
-        Instantiate(Resources.Load("Prefabs/" + assetModel), hologramTransform.position + positionOffset, hologramTransform.rotation);
+        Instantiate(Resources.Load("Prefabs/" + assetModel + "_" + assetTexture), hologramTransform.position + positionOffset, hologramTransform.rotation);
     }
 
 }

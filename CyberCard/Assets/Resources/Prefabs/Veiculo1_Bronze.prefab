@@ -191,7 +191,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 214b972e361d3ec4180e0602256e027e, type: 3}
+  - {fileID: 2100000, guid: 0d17be6c617ac214e9e6fb631a834060, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -274,7 +274,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 214b972e361d3ec4180e0602256e027e, type: 3}
+  - {fileID: 2100000, guid: 0d17be6c617ac214e9e6fb631a834060, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -638,7 +638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8411092496743009817}
   m_Layer: 0
-  m_Name: Veiculo1
+  m_Name: Veiculo1_Bronze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -936,7 +936,7 @@ Transform:
   m_GameObject: {fileID: 7829713939301069495}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 100.1, y: 100.1, z: 100.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 211181044883978659}
@@ -1136,7 +1136,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 214b972e361d3ec4180e0602256e027e, type: 3}
+  - {fileID: 2100000, guid: 0d17be6c617ac214e9e6fb631a834060, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1385,7 +1385,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 214b972e361d3ec4180e0602256e027e, type: 3}
+  - {fileID: 2100000, guid: 0d17be6c617ac214e9e6fb631a834060, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
