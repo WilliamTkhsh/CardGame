@@ -40,6 +40,16 @@ public class PlayCardScript : MonoBehaviour
         }
     }
 
+    //public void DiscardCard()
+    //{
+    //    for (int i = 0; i < gameManager.availableHandSlots.Length; i++)
+    //    {
+    //        Destroy(cardObject);
+    //        gameManager.availableHandSlots[i] = true;
+    //    }
+        
+    //}
+
     public void MoveCardToTableSlot(Transform transform)
     {
         cardObject.transform.SetParent(transform);
@@ -51,7 +61,7 @@ public class PlayCardScript : MonoBehaviour
         var hologramTransform = transform;
         var yOffset = 0.75f; // Distância adicional no eixo Y
         var positionOffset = new Vector3(0f, yOffset, 0f);
-        Instantiate(Resources.Load("Prefabs/" + assetModel + "_" + assetTexture), hologramTransform.position + positionOffset, hologramTransform.rotation);
+        var hologram = Instantiate(Resources.Load("Prefabs/" + assetModel + "_" + assetTexture), hologramTransform.position + positionOffset, hologramTransform.rotation) as GameObject;
+        hologram.transform.SetParent(transform);
     }
-
 }

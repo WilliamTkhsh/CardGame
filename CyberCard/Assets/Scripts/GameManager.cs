@@ -32,6 +32,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void CleanTable()
+    {
+        for (int i = 0; i < availableTableSlots.Length; i++)
+        {
+            if (availableTableSlots[i] == false)
+            {
+                Destroy(tableSlots[i].GetChild(0).gameObject);
+                Destroy(tableSlots[i].GetChild(1).gameObject);
+                availableTableSlots[i] = true;
+            }
+        }
+    }
+
     public void InstantiateNewCardAndRemoveFromDeck(Transform transform)
     {
         Card card = deck.cardList[Random.Range(0, deck.cardList.Count)];
