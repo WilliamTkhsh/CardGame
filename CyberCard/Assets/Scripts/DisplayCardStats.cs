@@ -14,8 +14,10 @@ public class DisplayCardStats : MonoBehaviour
     public TextMeshPro attackText;
     public TextMeshPro defenseText;
     public GameObject cardEdge;
+    public GameObject cardSpritePlane;
     public List<Material> materials;
     public List<GameObject> typeIcon;
+    public List<Material> models;
 
 
     public DisplayCardStats(int attack, int defense, string cardType, string cardModel, string cardMaterial)
@@ -35,7 +37,7 @@ public class DisplayCardStats : MonoBehaviour
         attack = 1;
         defense = 1;
         cardType = "Arma";
-        cardModel = "Arma1";
+        cardModel = "Laser Rifle";
         cardMaterial = "Bronze";
         attackText.text = attack.ToString();
         defenseText.text = defense.ToString();
@@ -49,6 +51,31 @@ public class DisplayCardStats : MonoBehaviour
     public void UpdateDefenseText()
     {
         defenseText.text = defense.ToString();
+    }
+
+    public void UpdateCardSprite()
+    {
+        switch (cardModel)
+        {
+            case "Laser Rifle":
+                cardSpritePlane.GetComponent<MeshRenderer>().material = models[0];
+                break;
+            case "Sniper":
+                cardSpritePlane.GetComponent<MeshRenderer>().material = models[1];
+                break;
+            case "Gl1tch":
+                cardSpritePlane.GetComponent<MeshRenderer>().material = models[2];
+                break;
+            case "Enforcer":
+                cardSpritePlane.GetComponent<MeshRenderer>().material = models[3];
+                break;
+            case "Voltor":
+                cardSpritePlane.GetComponent<MeshRenderer>().material = models[4];
+                break;
+            case "T-Armata":
+                cardSpritePlane.GetComponent<MeshRenderer>().material = models[5];
+                break;
+        }
     }
 
     public void UpdateCardMaterial()

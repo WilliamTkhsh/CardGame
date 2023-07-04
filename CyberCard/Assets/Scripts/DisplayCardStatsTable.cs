@@ -14,8 +14,10 @@ public class DisplayCardStatsTable : MonoBehaviour
     public TextMeshPro attackText;
     public TextMeshPro defenseText;
     public GameObject cardEdge;
+    public GameObject cardSpritePlane;
     public List<Material> materials;
     public List<GameObject> typeIcon;
+    public List<Material> models;
     public string assetModelPath;
 
     public void UpdateAttackText()
@@ -66,6 +68,31 @@ public class DisplayCardStatsTable : MonoBehaviour
         }
     }
 
+    public void UpdateCardSprite()
+    {
+        switch (cardModel)
+        {
+            case "Laser Rifle":
+                cardSpritePlane.GetComponent<MeshRenderer>().material = models[0];
+                break;
+            case "Sniper":
+                cardSpritePlane.GetComponent<MeshRenderer>().material = models[1];
+                break;
+            case "Gl1tch":
+                cardSpritePlane.GetComponent<MeshRenderer>().material = models[2];
+                break;
+            case "Enforcer":
+                cardSpritePlane.GetComponent<MeshRenderer>().material = models[3];
+                break;
+            case "Voltor":
+                cardSpritePlane.GetComponent<MeshRenderer>().material = models[4];
+                break;
+            case "T-Armata":
+                cardSpritePlane.GetComponent<MeshRenderer>().material = models[5];
+                break;
+        }
+    }
+
     public void UpdateCardModel()
     {
         assetModelPath = cardModel;
@@ -75,6 +102,7 @@ public class DisplayCardStatsTable : MonoBehaviour
     {
         UpdateAttackText();
         UpdateDefenseText();
+        UpdateCardSprite();
         UpdateCardModel();
         UpdateCardTypeIcon();
         UpdateCardMaterial();

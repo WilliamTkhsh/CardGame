@@ -49,11 +49,13 @@ public class DropdownController : MonoBehaviour
         }
         SetCardTipoValue(tipoDropdown.options[tipoDropdown.value].text);
         cardStats.UpdateCardTypeIcon();
+        cardStats.UpdateCardSprite();
     }
 
     public void OnModeloDropdownValueChanged()
     {
         SetCardModeloValue(modeloDropdown.options[modeloDropdown.value].text);
+        cardStats.UpdateCardSprite();
     }
     public void OnMaterialDropdownValueChanged()
     {
